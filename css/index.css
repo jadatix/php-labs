@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400&family=Nunito:wght@200;300&family=Open+Sans:wght@300&family=Roboto:wght@500&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1e352f;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #0a1f17;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    margin: 0 20px;
+    padding: 10px;
+    border-top: 1px solid #3f695f;
+}
+
+nav li:first-child {
+    border-top: none;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #d9e8e2;
+}
+
+main {
+    padding: 150px 20px 20px;
+}
+
+h2 {
+    margin: 0 0 20px;
+    font-size: 24px;
+}
+
+h3 {
+    margin: 30px 0;
+    font-size: 20px;
+}
+
+h3 p{
+    font-family: 'Roboto', sans-serif;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+li {
+    margin-bottom: 20px;
+    flex-basis: calc(33.33% - 10px);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+address {
+    margin: 0;
+    font-style: normal;
+}
+
+footer {
+    background-color: #0a1f17;
+    text-align: center;
+    color: #d9e8e2;
+    font-size: 14px;
+    bottom: 0;
+    left: 0;
+    bottom: 0;
+    padding: 20px;
+}
+
+.about-section {
+    background-color: #3f695f;
+    color: #fff;
+    padding: 80px 20px;
+    margin-top: 150px;
+}
+
+.about-section h2 {
+    margin-top: 0;
+    font-size: 36px;
+}
+
+.about-section p {
+    font-size: 20px;
+    text-indent: 50px;
+}
+
+.team-wrapper {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.team-section {
+    background-color: #1e352f;
+    color: #fff;
+    padding: 80px 20px;
+}
+
+.team-section h2 {
+    margin-top: 0;
+    font-size: 36px;
+}
+
+.team-section p {
+    font-size: 20px;
+}
+
+.team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.team-member img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.team-member h3 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+.team-member p {
+    font-size: 16px;
+    text-align: center;
+}
