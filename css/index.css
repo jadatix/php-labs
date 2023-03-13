@@ -173,3 +173,37 @@ footer {
     font-size: 16px;
     text-align: center;
 }
+
+.login-form {
+    width: 400px;
+    line-height: 1.5;
+    margin: 150px auto 0;
+    font-family: 'Roboto', sans-serif;
+    min-height: 475px;
+}
+
+.field-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.submit-button {
+    margin-top: 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.submit-button:hover {
+    background-color: #3e8e41;
+}
+
+.validation-error {
+    background-color: #e02121;
+    color: white;
+}
