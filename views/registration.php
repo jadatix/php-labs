@@ -28,16 +28,11 @@
         }
         foreach($_POST as $key => $value) {
             if(!in_array($key, $skip_validation) ){
-                print_r("key: ".$key);
-                print_r("<br>");
                 validate_field($key, $regexes[$key], $messages[$key]);
             }
         }
     }
     
-
-    print_r($errors);
-    print_r("<br>");
     if(empty($errors) && !empty($_POST)) {
         header('Location: index.php?action=main');
         exit();
