@@ -175,9 +175,9 @@ footer {
 }
 
 .login-form {
-    width: 1000px;
+    width: 450px;
     line-height: 1.5;
-    margin: 150px auto 150px;
+    margin: 300px auto 200px;
     font-family: 'Roboto', sans-serif;
     min-height: 475px;
 }
