@@ -1,4 +1,5 @@
 <?php
+    require_once("functions/sql_functions.php");
     $messages = [
         "login" => "Login must contain at least 4 characters and can only contain letters and numbers.",
         "password" => "Password must contain at least 8 characters, at least one uppercase letter, one lowercase letter and one number.",
@@ -33,8 +34,11 @@
         }
     }
     
-    if(empty($errors)) {
-        header('Location: index.php?action=main');
+    if(empty($errors) && !empty($_POST)) {
+        $_SESSION["login"] = $_POST["login"];
+        insert_user($_POST['login'],$_POST['password'],$_POST['email'],$_POST['gender']);
+
+        header('Location: index.php?action=registration_successful');
         exit();
     }
 
@@ -63,10 +67,10 @@
     </div>
     <fieldset>
         <legend>Gender</legend>
-        <input type="radio" name="gender" value="female"  />
+        <input type="radio" name="gender" value="0"  />
         <label for="gender">Female</label>
         <br>
-        <input type="radio" name="gender" value="male" />
+        <input type="radio" name="gender" value="1" />
         <label for="gender">Male</label>
     </fieldset>
     <button class="submit-button" type="submit">Register</button>
