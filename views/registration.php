@@ -33,7 +33,7 @@
         }
     }
     
-    if(empty($errors) && !empty($_POST)) {
+    if(empty($errors)) {
         header('Location: index.php?action=main');
         exit();
     }
