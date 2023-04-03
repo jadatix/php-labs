@@ -1,5 +1,5 @@
 <?php
-    require_once("functions/sql_functions.php");
+    require_once("functions/user_sql_functions.php");
     $messages = [
         "login" => "Login must contain at least 4 characters and can only contain letters and numbers.",
         "password" => "Password must contain at least 8 characters, at least one uppercase letter, one lowercase letter and one number.",
@@ -35,8 +35,10 @@
     }
     
     if(empty($errors) && !empty($_POST)) {
-        $_SESSION["login"] = $_POST["login"];
         insert_user($_POST['login'],$_POST['password'],$_POST['email'],$_POST['gender']);
+        $current_user = verify_login($_POST['login'], $_POST['password']);
+        $_SESSION['user_id'] = $current_user['id'];
+        $_SESSION['admin'] = $current_user['admin'];
 
         header('Location: index.php?action=registration_successful');
         exit();
