@@ -9,10 +9,12 @@
         if(is_array($result)) {
             $_SESSION['user_id'] = $result['id'];
             $_SESSION['admin'] = $result['admin'];
-            header('Location: index.php');
+            header('Location: index.php?action=main');
             exit();
         } else {
-            showPopupMessage($result);
+            for ($i=0; $i < 10; $i++) {    
+                showPopupMessage($result);
+            }
         }
     }
 ?>

@@ -1,7 +1,7 @@
 <?php 
-    session_start();
-    error_reporting(E_ALL);
-    ini_set('display_errors', 1);
+    // session_start();
+    // error_reporting(E_ALL);
+    // ini_set('display_errors', 1);
     require_once("layouts/header.php");
     require_once("functions/user_sql_functions.php");
     $connection = mysqli_connect("localhost","root","","plant_shop");
