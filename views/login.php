@@ -11,10 +11,8 @@
             $_SESSION['admin'] = $result['admin'];
             header('Location: index.php?action=main');
             exit();
-        } else {
-            for ($i=0; $i < 10; $i++) {    
-                showPopupMessage($result);
-            }
+        } else { 
+            showPopupMessage($result);
         }
     }
 ?>
