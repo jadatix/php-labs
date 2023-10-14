@@ -1,0 +1,37 @@
+version: '3.4'
+
+services:
+
+  mysql:
+    image: mysql:latest
+    volumes:
+      - mysql-volume:/var/lib/mysql
+      - mysql-scripts-volume:/docker-entrypoint-initdb.d
+
+    container_name: ${CONTAINER-phplabs}-mysql-container
+    restart: always
+    ports:
+        - "127.0.0.1:3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=qwe
+
+  php:
+    image: ${PHPLAB-php}-php-labs
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    depends_on:
+      - mysql
+    container_name: ${CONTAINER-phplabs}-phplabs-container
+    environment:
+      - DB_HOST=mysql
+      - DB_USER=root
+      - DB_PASSWORD=
+      - DB_NAME=plant_shop
+
+volumes:
+  mysql-volume: {}
+
+networks:
+  default:
+    name: php_network
