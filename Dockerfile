@@ -1,11 +1,11 @@
 FROM php:7.4-apache
 
-WORKDIR /var/www/html
+COPY . /usr/src/myapp
 
-COPY . /var/www/html
+WORKDIR /usr/src/myapp
 
-RUN docker-php-ext-install pdo pdo_mysql
+RUN docker-php-ext-install mysqli
 
 EXPOSE 80
 
-CMD ["apache2-foreground"]
+CMD [ "php", "-S", "0.0.0.0:80" ]
