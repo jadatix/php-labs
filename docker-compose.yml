@@ -30,6 +30,7 @@ services:
       - DB_NAME=plant_shop
     ports:
       - "127.0.0.1:8011:80"
+    restart: always
 
 volumes:
   mysql-volume: {}
