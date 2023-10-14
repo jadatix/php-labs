@@ -6,7 +6,6 @@ services:
     image: mysql:latest
     volumes:
       - mysql-volume:/var/lib/mysql
-      - mysql-scripts-volume:/docker-entrypoint-initdb.d
 
     container_name: ${CONTAINER-phplabs}-mysql-container
     restart: always
@@ -14,6 +13,7 @@ services:
         - "127.0.0.1:3306:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=qwe
+      - MYSQL_DATABASE=plant_shop
 
   php:
     image: ${PHPLAB-php}-php-labs
@@ -26,8 +26,10 @@ services:
     environment:
       - DB_HOST=mysql
       - DB_USER=root
-      - DB_PASSWORD=
+      - DB_PASSWORD=qwe
       - DB_NAME=plant_shop
+    ports:
+      - "127.0.0.1:8011:80"
 
 volumes:
   mysql-volume: {}
